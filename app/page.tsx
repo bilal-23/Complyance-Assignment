@@ -51,7 +51,7 @@ export default async function IndexPage() {
 }
 
 
-export const HomePageLayout = ({ children }: { children: ReactNode }) => {
+const HomePageLayout = ({ children }: { children: ReactNode }) => {
   return <>
     <div className="relative flex min-h-screen flex-col overflow-x-hidden">
       <SiteHeader />
