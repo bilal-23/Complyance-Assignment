@@ -14,6 +14,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/https://twitter.com/bilalmansuri2e",
     github: "https://github.com/bilal-23",
     website: "https://bilalmansuri.vercel.app/",
-    linkedIn: "https://www.linkedin.com/in/bilalmansuri/"
+    linkedIn: "https://www.linkedin.com/in/bilalmansuri/",
+    app: "/starwars",
+    githubRepo: "https://github.com/bilal-23/Complyance-Assignment"
   },
 }

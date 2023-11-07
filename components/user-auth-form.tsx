@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { useSearchParams } from "next/navigation"
-import { signIn, useSession } from "next-auth/react"
+import { signIn } from "next-auth/react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -30,7 +30,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     const [isLoading, setIsLoading] = React.useState<boolean>(false)
     const [isGitHubLoading, setIsGitHubLoading] = React.useState<boolean>(false)
     const searchParams = useSearchParams()
-    const { data: session } = useSession();
     const router = useRouter();
     const { toast } = useToast();
 
@@ -40,8 +39,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         const signInResult = await signIn("credentials", {
             email: data.email.toLowerCase(),
             password: data.password,
-            redirect: false,
-            callbackUrl: searchParams?.get("from") || "/dashboard",
+            callbackUrl: searchParams?.get("from") || "/",
         })
 
         setIsLoading(false);
@@ -59,7 +57,6 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                 variant: "default",
             })
 
-            router.push("/");
         }
     }
 
