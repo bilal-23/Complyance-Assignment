@@ -18,7 +18,9 @@ const StarWars = () => {
 
 
     useEffect(() => {
-        setTotalPages(Math.trunc(data?.pages[0].count / 10) + 1);
+        if (data) {
+            setTotalPages(Math.trunc(data.pages[0].count / 10) + 1);
+        }
     }, [data])
 
     const handleFetchNextPage = () => {

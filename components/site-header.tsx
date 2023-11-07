@@ -5,11 +5,10 @@ import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { getServerSession } from "next-auth";
 import ProfileDropdown from "./profile-dropdown";
 import { useSession } from "next-auth/react";
 
-export async function SiteHeader() {
+export function SiteHeader() {
   const { data: session } = useSession();
 
   return (
