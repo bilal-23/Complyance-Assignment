@@ -1,14 +1,18 @@
-"use client"
-import { Metadata } from "next";
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { UserAuthForm } from "@/components/user-auth-form"
-import { useSession } from "next-auth/react"
+import { getSession } from "next-auth/react"
+import { redirect } from "next/navigation";
 
-export default function LoginPage() {
-    // const { data: session } = useSession();
+export default async function LoginPage() {
+    const session = await getSession();
+
+    if (session) {
+        redirect("/");
+        return null;
+    }
 
     return (
         <div className="container flex h-screen w-screen flex-col items-center justify-center">
