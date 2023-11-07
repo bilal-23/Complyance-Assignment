@@ -14,8 +14,8 @@ const People = () => {
     const [totalPages, setTotalPages] = React.useState(0);
 
     useEffect(() => {
-        if (totalPages === 0) {
-            setTotalPages(Math.trunc(data?.pages[0].count / 10) + 1);
+        if (totalPages === 0 && data && data.pages) {
+            setTotalPages(Math.trunc(data.pages[0].count / 10) + 1);
         }
     }, [data])
 
@@ -27,6 +27,7 @@ const People = () => {
         setPage(+page - 1);
         fetchPreviousPage();
     }
+
 
     if (isLoading || isFetchingNextPage || isFetchingPreviousPage) {
         return <div className='flex flex-col items-center'>
@@ -60,7 +61,7 @@ const People = () => {
             </div>
             <div className="flex gap-10 flex-wrap justify-center p-4">
                 {data && data.pages[page].results.map((person: Person, index: number) => {
-                    return <PeopleCard key={person.url} index={index} name={person.name} species={person.species[0]} />
+                    return <PeopleCard key={person.url} index={index} name={person.name} species={person.species[0]} url={person.url} />
                 })}
             </div>
         </div>

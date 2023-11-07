@@ -24,7 +24,7 @@ export const useGetPeople = () => {
             }
         },
         getNextPageParam: (lastPage: any, allPages) => {
-            const nextPage = lastPage.next;
+            const nextPage = lastPage?.next ?? "";
             if (nextPage) {
                 const url = new URL(nextPage);
                 const pageParam = url.searchParams.get("page");
@@ -32,7 +32,7 @@ export const useGetPeople = () => {
             }
         },
         getPreviousPageParam: (firstPage: any, allPages) => {
-            const previousPage = firstPage.previous;
+            const previousPage = firstPage?.previous;
             if (previousPage) {
                 const url = new URL(previousPage);
                 const pageParam = url.searchParams.get("page");
@@ -45,16 +45,3 @@ export const useGetPeople = () => {
 };
 
 
-// {
-//     queryKey: ["people"],
-//     queryFn: async () => {
-//         try {
-//             const response = await axios.get<PeopleApi>("https://swapi.dev/api/people");
-//             const data = response.data;
-//             return data;
-//         }
-//         catch (e) {
-//             console.log(e);
-//         }
-//     }
-// }
