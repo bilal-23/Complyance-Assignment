@@ -2,7 +2,6 @@ import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
 import { SiteHeader } from "@/components/site-header"
-import { ReactNode } from "react"
 import { Icons } from "@/components/icons"
 
 export default async function IndexPage() {

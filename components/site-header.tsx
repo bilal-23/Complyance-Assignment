@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import { siteConfig } from "@/config/site"
 import { buttonVariants } from "@/components/ui/button"
@@ -6,9 +7,10 @@ import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { getServerSession } from "next-auth";
 import ProfileDropdown from "./profile-dropdown";
+import { useSession } from "next-auth/react";
 
 export async function SiteHeader() {
-  const session = await getServerSession();
+  const { data: session } = useSession();
 
   return (
     <header className="bg-background sticky top-0 z-40 w-full border-b">
