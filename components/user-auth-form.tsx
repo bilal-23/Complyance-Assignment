@@ -110,7 +110,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                     </button>
                 </div>
             </form>
-            <div className="relative">
+            {/* <div className="relative">
                 <div className="absolute inset-0 flex items-center">
                     <span className="w-full border-t" />
                 </div>
@@ -138,7 +138,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                     <Icons.gitHub className="mr-2 h-4 w-4" />
                 )}{" "}
                 Github
-            </button>
+            </button> */}
         </div>
     )
 }
