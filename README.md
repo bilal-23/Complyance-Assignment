@@ -7,7 +7,6 @@
 
 ## Features:
 - Sign in Using dummy credentials
-- Sign in with GitHub
 - Starwars Character List
 - Search Functionality
 
