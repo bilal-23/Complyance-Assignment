@@ -42,7 +42,7 @@ export default async function IndexPage() {
             </div>
             <div className="relative flex justify-center text-xs uppercase">
               <span className="bg-background px-2 text-muted-foreground flex gap-1 items-center">
-                Or continue with <Icons.gitHub className="mr-2 h-4 w-4" />
+{/*                 Or continue with <Icons.gitHub className="mr-2 h-4 w-4" /> */}
               </span>
             </div>
           </div>
