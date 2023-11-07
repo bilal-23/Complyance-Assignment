@@ -1,32 +1,26 @@
-"use client"
-import { useGetPeople } from '@/queries/getPeople';
-import React, { useEffect } from 'react'
+"use client";
+
+import React from 'react'
 import PeopleCard from './people-card';
 import { Skeleton } from './ui/skeleton';
 import { Button } from './ui/button';
 import { Person } from '@/types/api';
+import { InfiniteData } from '@tanstack/react-query';
 
 
+interface Props {
+    data: InfiniteData<any, unknown> | undefined;
+    isLoading: boolean;
+    isError: boolean;
+    isFetchingNextPage: boolean;
+    isFetchingPreviousPage: boolean;
+    handleFetchPreviousPage: () => void;
+    handleFetchNextPage: () => void;
+    totalPages: number;
+    page: number;
 
-const People = () => {
-    const { data, isLoading, error, fetchNextPage, fetchPreviousPage, isFetchingNextPage, isFetchingPreviousPage } = useGetPeople();
-    const [page, setPage] = React.useState(0);
-    const [totalPages, setTotalPages] = React.useState(0);
-
-    useEffect(() => {
-        if (totalPages === 0 && data && data.pages) {
-            setTotalPages(Math.trunc(data.pages[0].count / 10) + 1);
-        }
-    }, [data])
-
-    const handleFetchNextPage = () => {
-        setPage(+page + 1);
-        fetchNextPage();
-    }
-    const handleFetchPreviousPage = () => {
-        setPage(+page - 1);
-        fetchPreviousPage();
-    }
+}
+const People: React.FC<Props> = ({ data, isLoading, isFetchingNextPage, isFetchingPreviousPage, handleFetchNextPage, handleFetchPreviousPage, page, totalPages, isError }) => {
 
 
     if (isLoading || isFetchingNextPage || isFetchingPreviousPage) {
@@ -44,9 +38,15 @@ const People = () => {
         </div>
 
     }
-    if (error) {
+    if (isError) {
         return <div className="flex gap-10 flex-wrap justify-center p-4">
             <p className='text-lg text-red-500 font-semibold'>Something went wrong </p>
+        </div>
+    }
+
+    if (data?.pages[0].results.length === 0) {
+        return <div className="flex gap-10 flex-wrap justify-center p-4">
+            <p className='text-lg text-red-500 font-semibold'>No results found </p>
         </div>
     }
 
@@ -61,7 +61,7 @@ const People = () => {
             </div>
             <div className="flex gap-10 flex-wrap justify-center p-4">
                 {data && data.pages[page].results.map((person: Person, index: number) => {
-                    return <PeopleCard key={person.url} index={index} name={person.name} species={person.species[0]} url={person.url} />
+                    return <PeopleCard url={person.url} key={person.url} index={index} name={person.name} species={person.species[0]} />
                 })}
             </div>
         </div>

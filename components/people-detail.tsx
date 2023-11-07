@@ -29,11 +29,11 @@ const PeopleDetail: React.FC<Props> = ({ name, url }) => {
                 {error && <p>Something went wrong</p>}
                 {isLoading && <SkeletonLoader />}
                 {person && !isLoading && <>
-                    <div className='flex justify-center w-full sm:w-[190px] h-[206px]'>
+                    <div className='flex items-center justify-center w-full sm:w-[190px] h-[206px]'>
                         <img
                             src={`https://picsum.photos/200/200?random=${1}`}
                             alt={name}
-                            className="mb-4 w-[190px] h-full"
+                            className="mx-auto w-auto h-full"
                         />
                     </div>
                     <div className='flex flex-col justify-center gap-2 items-center flex-1 p-2'>
