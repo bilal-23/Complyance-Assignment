@@ -1,22 +1,18 @@
-# next-template
+# Complyance Assignment - Starwars App
+## Tech Stack:
+- Nextjs 13 with app router
+- ShadcnUI
+- Tanstack-React Query
+- Next-Auth
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+## Features:
+- Sign in Using dummy credentials
+- Sign in with GitHub
+- Starwars Character List
+- Search Functionality
 
-## Usage
+## Incomplete:
+- Filtration
+- Refresh token and JWT authentication
 
-```bash
-npx create-next-app -e https://github.com/shadcn/next-template
-```
-
-## Features
-
-- Next.js 13 App Directory
-- Radix UI Primitives
-- Tailwind CSS
-- Icons from [Lucide](https://lucide.dev)
-- Dark mode with `next-themes`
-- Tailwind CSS class sorting, merging and linting.
-
-## License
-
-Licensed under the [MIT license](https://github.com/shadcn/ui/blob/main/LICENSE.md).
+Live - https://complyance-assignment-bilal.vercel.app/
