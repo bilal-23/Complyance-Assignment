@@ -9,7 +9,9 @@ declare module "next-auth" {
             name: string;
             email: string;
             image: string;
-            expiresIn: number;
+            expiresAt: number;
+            access_token: string;
+            refresh_token: string;
         }
     }
 
@@ -17,6 +19,8 @@ declare module "next-auth" {
         name: string;
         email: string;
         image: string;
-        expiresIn: number;
+        expiresAt: number;
+        access_token: string;
+        refresh_token: string;
     }
 }

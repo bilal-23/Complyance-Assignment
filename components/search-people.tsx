@@ -27,7 +27,7 @@ const SearchPeople: React.FC<Props> = ({ handleSubmit, searchInput, setSearchInp
             {/* Filters */}
             <div className='flex gap-5 flex-wrap sm:flex-nowrap flex-row'>
                 {/* HomeWorld */}
-                <Select>
+                {/* <Select>
                     <SelectTrigger className="max-w-[100px] min-w-fit">
                         <SelectValue placeholder="Homeworlds" />
                     </SelectTrigger>
@@ -36,9 +36,9 @@ const SearchPeople: React.FC<Props> = ({ handleSubmit, searchInput, setSearchInp
                         <SelectItem value="dark">Dark</SelectItem>
                         <SelectItem value="system">System</SelectItem>
                     </SelectContent>
-                </Select>
+                </Select> */}
                 {/* Film */}
-                <Select>
+                {/* <Select>
                     <SelectTrigger className="w-[100px]">
                         <SelectValue placeholder="Films" />
                     </SelectTrigger>
@@ -47,9 +47,9 @@ const SearchPeople: React.FC<Props> = ({ handleSubmit, searchInput, setSearchInp
                         <SelectItem value="dark">Dark</SelectItem>
                         <SelectItem value="system">System</SelectItem>
                     </SelectContent>
-                </Select>
+                </Select> */}
                 {/* Species */}
-                <Select>
+                {/* <Select>
                     <SelectTrigger className="w-[100px]">
                         <SelectValue placeholder="Species" />
                     </SelectTrigger>
@@ -58,7 +58,7 @@ const SearchPeople: React.FC<Props> = ({ handleSubmit, searchInput, setSearchInp
                         <SelectItem value="dark">Dark</SelectItem>
                         <SelectItem value="system">System</SelectItem>
                     </SelectContent>
-                </Select>
+                </Select> */}
             </div>
         </div>
     )
